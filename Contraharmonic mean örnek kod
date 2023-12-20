@@ -1,0 +1,26 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Görüntüyü yükle
+image = cv2.imread('ornek_goruntu.png', cv2.IMREAD_GRAYSCALE)  # Gri tonlamalı olarak yükle
+
+# Contraharmonic Mean filtresi uygulama
+Q = 1.5  # Q parametresi
+filtered_image = cv2.filter2D(image, -1, np.array([[1, 1, 1],
+                                                  [1, Q, 1],
+                                                  [1, 1, 1]]) / (Q + 8), borderType=cv2.BORDER_REPLICATE)
+
+# Görüntüleri görselleştir
+plt.figure(figsize=(12, 6))
+
+plt.subplot(1, 2, 1)
+plt.imshow(image, cmap='gray')
+plt.title('Orijinal Görüntü')
+
+plt.subplot(1, 2, 2)
+plt.imshow(filtered_image, cmap='gray')
+plt.title('Contraharmonic Mean Filtresi Uygulanmış Görüntü')
+
+plt.tight_layout()
+plt.show()
