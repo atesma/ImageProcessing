@@ -1,1 +1,21 @@
+import cv2
+import numpy as np
+
+# Görüntüyü yükle
+image = cv2.imread('ornek_goruntu.png', 0)  # Gri tonlamalı olarak yükle
+
+# Belirli bir bit düzeyini almak için fonksiyon
+def bit_plane_slice(image, bit_level):
+    # Belirli bit düzeyini elde etmek için bitwise and işlemi
+    bit_plane = np.bitwise_and(image, 2**bit_level)
+    return bit_plane
+
+# Belirli bir bit düzeyini al
+bit_level = 4  # Örnek olarak 4. bit düzeyini alalım
+result = bit_plane_slice(image, bit_level)
+
+# Sonucu görselleştir
+cv2.imshow(f"Bit Level {bit_level}", result)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
