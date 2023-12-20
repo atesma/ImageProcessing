@@ -1,0 +1,32 @@
+import cv2
+import matplotlib.pyplot as plt
+
+# Görüntüyü yükle
+image = cv2.imread('ornek_goruntu.png')
+
+# Görüntüyü RGB bileşenlerine ayırma
+r = image[:, :, 2]  # Kırmızı bileşen (R)
+g = image[:, :, 1]  # Yeşil bileşen (G)
+b = image[:, :, 0]  # Mavi bileşen (B)
+
+# Bölütlenmiş görüntüleri görselleştirme
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 4, 1)
+plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+plt.title('Orijinal Görüntü')
+
+plt.subplot(1, 4, 2)
+plt.imshow(r, cmap='gray')
+plt.title('Kırmızı Bölüt')
+
+plt.subplot(1, 4, 3)
+plt.imshow(g, cmap='gray')
+plt.title('Yeşil Bölüt')
+
+plt.subplot(1, 4, 4)
+plt.imshow(b, cmap='gray')
+plt.title('Mavi Bölüt')
+
+plt.tight_layout()
+plt.show()
