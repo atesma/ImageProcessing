@@ -2,7 +2,7 @@
 CPE409(1) Image Processing 
 
 1.	Normalizasyon ile standardizasyon arasındaki farklar.
-2.	
+   
 Görüntü işleme sürecinde, normalizasyon ve standardizasyon genellikle veri önişleme adımlarında kullanılır. İkisi de veri değerlerini değiştirir, ancak farklı şekillerde yaparlar:
 
 **Normalizasyon:**
@@ -10,6 +10,7 @@ Görüntü işleme sürecinde, normalizasyon ve standardizasyon genellikle veri 
 Veri değerlerini belirli bir aralığa dönüştürmek için kullanılır. Genellikle [0, 1] veya [-1, 1] aralığında olacak şekilde yapılandırılır.
 Görüntü işlemede piksel değerlerini normalize etmek için kullanılabilir. Örneğin, piksel değerlerini 0 ile 1 arasında ölçeklendirerek, aynı ölçekteki değerlere sahip olurlar.
 Normalizasyon, veri dağılımını değiştirmez, yalnızca ölçeklendirir.
+
 **Standardizasyon:**
 
 Veri değerlerini ortalaması 0 ve standart sapması 1 olacak şekilde dönüştürür.
